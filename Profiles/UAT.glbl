@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalVariableEntities>
    <description></description>
-   <name>default</name>
+   <name>UAT</name>
    <tag></tag>
-   <defaultProfile>true</defaultProfile>
+   <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'https://www.redbus.in/'</initValue>
-      <name>RedbusURL</name>
+      <initValue>'https://ishine.apmosys.com/#/login'</initValue>
+      <name>url</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

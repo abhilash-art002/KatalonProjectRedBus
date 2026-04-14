@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSuiteEntity>
+   <description></description>
+   <name>TS_01</name>
+   <tag></tag>
+   <isRerun>false</isRerun>
+   <mailRecipient></mailRecipient>
+   <numberOfRerun>0</numberOfRerun>
+   <pageLoadTimeout>30</pageLoadTimeout>
+   <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
+   <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <rerunImmediately>true</rerunImmediately>
+   <testSuiteGuid>84c63c31-1399-47f1-8bed-a19aa76bf20b</testSuiteGuid>
+   <testCaseLink>
+      <guid>28e7c707-55e6-417b-9df2-01d877c01140</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/RedBus/TC_01</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>76306f9e-59e7-49c6-a323-3fc8cb3f435a</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/redBus</testDataId>
+      </testDataLink>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId>76306f9e-59e7-49c6-a323-3fc8cb3f435a</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>FromDst</value>
+         <variableId>5108c45c-0fd0-4eed-ba83-31f8e77d9be2</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>76306f9e-59e7-49c6-a323-3fc8cb3f435a</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>ToDst</value>
+         <variableId>609e6912-d79e-45f3-83a0-0c3e101713bc</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>76306f9e-59e7-49c6-a323-3fc8cb3f435a</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Date</value>
+         <variableId>0ed9177f-2e94-4093-b058-c6a46ba96b8b</variableId>
+      </variableLink>
+   </testCaseLink>
+</TestSuiteEntity>

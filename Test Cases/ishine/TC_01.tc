@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_01</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>640b6927-4760-4569-b127-e9e4e5027d39</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>ad1b76a6-5e01-4974-bdf5-a24302561369</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'kanakala.swetha@apmosys.com\n'</defaultValue>
+      <description></description>
+      <id>ad1b76a6-5e01-4974-bdf5-a24302561369</id>
+      <masked>false</masked>
+      <name>username</name>
+   </variable>
+</TestCaseEntity>
