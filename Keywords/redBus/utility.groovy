@@ -23,21 +23,49 @@ import internal.GlobalVariable
 
 public class utility {
 
+//	@Keyword
+//	def ChooseDayFromCalender(String Date) {
+//		String[] dateParts = Date.split("-")
+//
+//		String day = dateParts[0]
+//		String month = dateParts[1]
+//		String year = dateParts[2]
+//
+//		String uiText = WebUI.getText(findTestObject('Object Repository/BusPage/p_monthYear'))
+//		String expectedText = month + " " + year
+//
+//		while (!uiText.equals(expectedText)) {
+//			WebUI.enhancedClick('Object Repository/BusPage/i_nextMonthArrow')
+//			WebUI.delay(1)
+//			WebUI.enhancedClick(findTestObject('Object Repository/BusPage/span_date',[text : day]))
+//		}
+//	}
+	
 	@Keyword
 	def ChooseDayFromCalender(String Date) {
 		String[] dateParts = Date.split("-")
-
 		String day = dateParts[0]
 		String month = dateParts[1]
 		String year = dateParts[2]
-
-		String uiText = WebUI.getText(findTestObject('Object Repository/BusPage/p_monthYear'))
+	
 		String expectedText = month + " " + year
-
-		while (!uiText.equals(expectedText)) {
-			WebUI.enhancedClick('Object Repository/BusPage/i_nextMonthArrow')
+		println("Looking for: " + expectedText)
+	
+		while (true) {
+			String uiText = WebUI.getText(findTestObject('Object Repository/BusPage/p_monthYear'))
+			println("Currently showing: " + uiText)
+	
+			if (uiText.equals(expectedText)) {
+				println("Found the right month!")
+				break 
+			}
+	
+			WebUI.enhancedClick(findTestObject('Object Repository/BusPage/i_nextMonthArrow'))
+			
 			WebUI.delay(1)
-			WebUI.enhancedClick(findTestObject('Object Repository/BusPage/span_date',[text : day]))
 		}
+	
+		println("Now clicking the day: " + day)
+		WebUI.enhancedClick(findTestObject('Object Repository/BusPage/span_date', [('text') : day]))
 	}
 }
