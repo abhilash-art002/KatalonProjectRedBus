@@ -43,6 +43,6 @@
       <description></description>
       <id>0ed9177f-2e94-4093-b058-c6a46ba96b8b</id>
       <masked>false</masked>
-      <name>Date</name>
+      <name>date</name>
    </variable>
 </TestCaseEntity>

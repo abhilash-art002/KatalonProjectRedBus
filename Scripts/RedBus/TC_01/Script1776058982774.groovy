@@ -44,8 +44,9 @@ if(WebUI.verifyElementPresent(findTestObject('Object Repository/common/div_aria-
 
 WebUI.enhancedClick(findTestObject('Object Repository/BusPage/div_calender'))
 
-CustomKeywords.'redBus.utility.ChooseDayFromCalender'(Date)
+CustomKeywords.'redBus.utility.ChooseDayFromCalender'(date)
 
 WebUI.enhancedClick(findTestObject('Object Repository/common/button_text', [ text : 'Search buses']))
 
+WebUI.delay(100)
 
