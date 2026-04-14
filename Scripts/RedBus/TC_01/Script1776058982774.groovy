@@ -32,7 +32,7 @@ if(WebUI.verifyElementPresent(findTestObject('Object Repository/common/div_aria-
 	WebUI.closeBrowser()
 	
 }
-
+WebUI.delay(3)
 WebUI.enhancedClick(findTestObject('Object Repository/common/input_id', [ text : 'destinput' ]))
 WebUI.sendKeys(findTestObject('Object Repository/common/input_id', [ text : 'destinput' ]), ToDst)
 
@@ -41,11 +41,12 @@ if(WebUI.verifyElementPresent(findTestObject('Object Repository/common/div_aria-
 }else {
 	WebUI.closeBrowser()
 }
+WebUI.delay(3)
 
 WebUI.enhancedClick(findTestObject('Object Repository/BusPage/div_calender'))
 
-CustomKeywords.'redBus.utility.ChooseDayFromCalender'(Date)
+CustomKeywords.'redBus.utility.ChooseDayFromCalender'(date)
 
 WebUI.enhancedClick(findTestObject('Object Repository/common/button_text', [ text : 'Search buses']))
-
+WebUI.delay(30)
 
