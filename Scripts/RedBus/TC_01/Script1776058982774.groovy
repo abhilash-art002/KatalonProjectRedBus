@@ -32,7 +32,11 @@ if(WebUI.verifyElementPresent(findTestObject('Object Repository/common/div_aria-
 	WebUI.closeBrowser()
 	
 }
+<<<<<<< HEAD
 WebUI.delay(1)
+=======
+
+>>>>>>> branch 'master' of https://github.com/abhilash-art002/KatalonProjectRedBus.git
 WebUI.enhancedClick(findTestObject('Object Repository/common/input_id', [ text : 'destinput' ]))
 WebUI.sendKeys(findTestObject('Object Repository/common/input_id', [ text : 'destinput' ]), ToDst)
 
@@ -41,16 +45,24 @@ if(WebUI.verifyElementPresent(findTestObject('Object Repository/common/div_aria-
 }else {
 	WebUI.closeBrowser()
 }
+<<<<<<< HEAD
 WebUI.delay(1)
+=======
+>>>>>>> branch 'master' of https://github.com/abhilash-art002/KatalonProjectRedBus.git
 
 WebUI.enhancedClick(findTestObject('Object Repository/BusPage/div_calender'))
 
 CustomKeywords.'redBus.utility.ChooseDayFromCalender'(date)
 
 WebUI.enhancedClick(findTestObject('Object Repository/common/button_text', [ text : 'Search buses']))
+<<<<<<< HEAD
 WebUI.delay(4)
 
 CustomKeywords.'redBus.utility.busFoundResults'()
 
 
+=======
+
+WebUI.delay(100)
+>>>>>>> branch 'master' of https://github.com/abhilash-art002/KatalonProjectRedBus.git
 

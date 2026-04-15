@@ -5,9 +5,20 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+<<<<<<< HEAD
 import static org.assertj.core.api.InstanceOfAssertFactories.INTEGER
+=======
+import static org.assertj.core.api.Assertions.assertThatException
+import static org.assertj.core.api.InstanceOfAssertFactories.BYTE
+import static org.assertj.core.api.InstanceOfAssertFactories.DOUBLE
+>>>>>>> branch 'master' of https://github.com/abhilash-art002/KatalonProjectRedBus.git
 import static org.assertj.core.api.InstanceOfAssertFactories.STRING
 
+<<<<<<< HEAD
+=======
+import org.openqa.selenium.By
+import org.openqa.selenium.JavascriptExecutor
+>>>>>>> branch 'master' of https://github.com/abhilash-art002/KatalonProjectRedBus.git
 import org.openqa.selenium.WebElement
 
 import com.kms.katalon.core.annotation.Keyword
@@ -77,6 +88,7 @@ public class utility {
 		WebUI.enhancedClick(findTestObject('Object Repository/BusPage/span_date', [('text') : day]))
 	}
 
+<<<<<<< HEAD
 	@Keyword
 	def busFoundResults() {
 		String noOfBus = WebUI.getText(findTestObject('Object Repository/searchResult/div_busesFoundText'))
@@ -163,6 +175,82 @@ public class utility {
 				WebUI.delay(1)
 			} else {
 				println("FAILED: Could not open seats for Bus #${i} after 3 attempts.")
+=======
+
+	@Keyword
+	def applyFilters() {
+		def filterData = findTestData("Data Files/BusFilters")
+		int i ;
+		List FilterName = []
+
+		int rowSize = filterData.getRowNumbers()
+
+		for (i=1; i<=rowSize; i ++) {
+			FilterName.add(filterData.getValue(1, i))
+		}
+
+		WebUI.takeScreenshot()
+
+		for(String name : FilterName) {
+			println("Filters are "+ name)
+
+			WebUI.click(findTestObject("Object Repository/BusPage/div_filterName",['filterName' : name]))
+			WebUI.takeScreenshot()
+		}
+		WebUI.takeScreenshot()
+	}
+
+
+	@Keyword
+	def captureResults() {
+		WebUI.takeScreenshot()
+		boolean found = false
+		int maxScrollCount = 1
+//		int maxAttempts = 20
+		while(!found ) {
+
+			if(WebUI.verifyElementVisible(findTestObject("Object Repository/BusPage/text_endResults"), FailureHandling.OPTIONAL)) {
+				found = true
+				println("End of results found!")
+				break
+			}
+
+			WebUI.scrollToPosition(0, (500 * maxScrollCount))
+			WebUI.delay(2)
+			WebUI.takeScreenshot()
+
+			maxScrollCount++
+		}
+
+		List<WebElement> results = WebUI.findWebElements(findTestObject('Object Repository/BusPage/busResults'), 10)
+		println("Total elements found: " + results.size())
+		
+		
+		for (WebElement ele: results) {
+			try {
+				WebElement rat = ele.findElement(By.xpath(".//div[contains(@class,'chip--') and contains(@aria-label,'star rating')]/div[contains(@class, 'rating')]"))
+				WebElement price = ele.findElement(By.xpath(".//p[contains(@class,'finalFare')] | .//div[contains(@class,'startPrice')]//p[contains(@class,'currentPrice')]"))
+				WebElement btn = ele.findElement(By.xpath(".//button[contains(@aria-label,'View seats')]"))
+				
+				String ratingText = rat.getText()
+				String priceText = price.getText()
+				priceText = priceText.replaceAll("[^0-9]", "")
+				WebUI.takeScreenshot()
+				
+				double ratingNum = Double.parseDouble(ratingText)
+				double priceNum = Double.parseDouble(priceText)
+				
+				
+				if(ratingNum >= 4 && priceNum <= 1000) {
+					btn.click()
+					WebUI.takeScreenshot()
+				}
+				
+				println("Ratings are: "+ ratingText + " " + priceNum)
+				
+			}catch(Exception e) {
+				println(e.getMessage())
+>>>>>>> branch 'master' of https://github.com/abhilash-art002/KatalonProjectRedBus.git
 			}
 		}
 	}
