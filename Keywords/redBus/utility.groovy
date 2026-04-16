@@ -265,13 +265,12 @@ public class utility {
 			count++
 		}
 		WebUI.takeScreenshot()
-		
+
 
 		String selectedSeats = WebUI.getText(findTestObject('Object Repository/BusPage/span_selectedSeatCount'))
 		if(selectedSeats.contains(seatCount+'')) {
 			KeywordUtil.markPassed(seatCount +" no of seats are selected")
 			WebUI.takeScreenshot()
-			
 		}
 	}
 
@@ -279,6 +278,7 @@ public class utility {
 	def btnClickByText(String btnName) {
 		TestObject obj = new TestObject()
 		obj.addProperty('xpath', com.kms.katalon.core.testobject.ConditionType.EQUALS, "//button[text()='${btnName}']")
+		WebUI.click(obj, FailureHandling.OPTIONAL)
 		WebUI.takeScreenshot()
 	}
 
@@ -289,7 +289,18 @@ public class utility {
 		WebUI.delay(4)
 		WebUI.takeScreenshot()
 		
+		WebUI.click(findTestObject('Object Repository/BusPage/input_boarding',['placeName' : 'Koparkhairne Teen Taki' ]))
+		WebUI.click(findTestObject('Object Repository/BusPage/input_boarding',['placeName' : 'Bhumkar Chowk Bridge' ]))
+		WebUI.takeScreenshot()
+		btnClickByText("Fill passenger details")
+		WebUI.delay(4)
+		WebUI.takeScreenshot()
+		WebUI.delay(15)
+		WebUI.takeScreenshot()
+		
 	}
-
+	
+	
+	
 }
 
